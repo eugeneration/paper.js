@@ -13258,8 +13258,8 @@ new function() {
 
 	var navigator = window.navigator,
 		mousedown, mousemove, mouseup;
-	var hasTouch = ('ontouchstart' in window && navigator.userAgent.match(
-		/mobile|tablet|ip(ad|hone|od)|android|silk/i));
+	var hasTouch = ('ontouchstart' in window && (navigator.userAgent.match(
+		/mobile|tablet|ip(ad|hone|od)|android|silk/i) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)));
 	if (navigator.pointerEnabled || navigator.msPointerEnabled) {
 		mousedown = 'pointerdown MSPointerDown';
 		mousemove = 'pointermove MSPointerMove';
