@@ -13375,7 +13375,7 @@ new function() {
 		if (isTouchEvent(event)) {
 			var defaultBehaviour = false;
 			if (event.targetTouches.length == 1) {
-		      
+
 		      if (mouseDown) {
 		      	defaultBehaviour = true;
 		      }
@@ -13383,7 +13383,7 @@ new function() {
 		      	// check if the mouse has moved past the threshold
 		      	var fingerData = getFingerData(event, event.targetTouches[0]);
 		        var delta = getDeltaStart(fingerData);
-		        event.preventDefault();
+		        //event.preventDefault();
 		        if (delta.distance() > drawThreshold) {
 		        	if (isMouseDownPending) {
 		        		isMouseDownPending = false;
@@ -13424,7 +13424,7 @@ new function() {
 		        //calculate how much this should affect the actual object
 		        var scalingDelta = scalePixelChange / gestureCache.prev.distance;
 		        var rotationDelta = (angleChange*180/Math.PI);
-		        
+
 		        var view = View._focused;
 				view._handleGestureEvent('twofingermove', event, gestureCache.prev.center, pan, scalingDelta);
 
@@ -13463,7 +13463,7 @@ new function() {
 		}
 	};
 
-	
+
 	docEvents[mouseup] = function(event) {
 		var defaultBehaviour = true;
 		if (isTouchEvent(event)) {
